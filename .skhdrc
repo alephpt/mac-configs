@@ -1,5 +1,5 @@
-# opens iTerm2
-alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
+# opens alacritty
+alt - space : /Applications/MacPorts/Alacritty.app/Contents/MacOS/alacritty
 
 # Show system statistics
 fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
@@ -9,25 +9,25 @@ fn + lalt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
 fn + lalt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
 
 # Navigation
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+alt - a : yabai -m window --focus west
+alt - s : yabai -m window --focus south
+alt - w : yabai -m window --focus north
+alt - d : yabai -m window --focus east
 
 # Moving windows
-shift + alt - h : yabai -m window --warp west
-shift + alt - j : yabai -m window --warp south
-shift + alt - k : yabai -m window --warp north
-shift + alt - l : yabai -m window --warp east
+shift + alt - a : yabai -m window --warp west
+shift + alt - s : yabai -m window --warp south
+shift + alt - w : yabai -m window --warp north
+shift + alt - d : yabai -m window --warp east
 
 # Move focus container to workspace
-shift + alt - m : yabai -m window --space last;
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space nex; 
-cmd + lctrl - 1 : yabai -m window --space 1; 
-cmd + lctrl - 2 : yabai -m window --space 2;
-cmd + lctrl - 3 : yabai -m window --space 3;
-cmd + lctrl - 4 : yabai -m window --space 4;
+shift + alt - x : yabai -m window --space last;
+shift + alt - q : yabai -m window --space prev;
+shift + alt - e : yabai -m window --space nex; 
+cmd + shift - 1 : yabai -m window --space 1; 
+cmd + shift - 2 : yabai -m window --space 2;
+cmd + shift - 3 : yabai -m window --space 3;
+cmd + shift - 4 : yabai -m window --space 4;
 
 # Resize windows
 lctrl + alt - h : yabai -m window --resize left:-50:0; \
@@ -64,8 +64,10 @@ cmd - z : \
     yabai -m window --toggle float; \
     yabai -m window --toggle border
 
+cmd + shift - x : yabai -m window --close
+
 # Restart Yabai
-shift + lctrl + alt - r : \
+cmd + shift - r : \
     /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

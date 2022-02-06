@@ -1,15 +1,13 @@
 call plug#begin()
-Plug 'dracula/vim'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'simrat39/symbols-outline.nvim'
 Plug 'ncm2/float-preview.nvim'
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
 Plug 'neovim/nvim-lsp'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'arakashic/chromatica.nvim'
 Plug 'Shougo/deoplete-lsp'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -23,10 +21,15 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 let g:float_preview#docked = 1
 
+" chromatica settings
+"let g:chromatica#enable_at_startup=1
+"let g:chromatica#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+
 " rainbow brackets 
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
 
 " disable scratch window
 set completeopt-=preview
@@ -40,6 +43,7 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+inoremap < <><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
@@ -54,6 +58,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 " vim configs
+set termguicolors           " show special colors
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
 set ignorecase              " case insensitive
